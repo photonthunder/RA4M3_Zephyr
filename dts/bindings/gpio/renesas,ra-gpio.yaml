@@ -1,0 +1,45 @@
+description: RA GPIO PORT node
+
+compatible: "renesas,ra-gpio"
+
+include: [gpio-controller.yaml, base.yaml]
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: false
+
+    label:
+      required: true
+
+    port:
+      type: int
+      required: true
+      description: |
+        The GPIO port number. GPIO port port0 has:
+
+          port = <0>;
+
+        And port1 has:
+
+          port = <1>;
+
+    "#gpio-cells":
+      const: 2
+
+    "#renesas,pin-cells":
+      type: int
+      required: true
+      const: 2
+      description: Number of items to expect in a renesas,pins specifier
+
+
+gpio-cells:
+  - pin
+  - flags
+
+renesas,pin-cells:
+  - pin
+  - config

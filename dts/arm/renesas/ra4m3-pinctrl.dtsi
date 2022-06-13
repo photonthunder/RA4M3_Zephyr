@@ -1,0 +1,161 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "pinctrl_renesas_ra.h"
+
+/ {
+	soc {
+		pinctrl@40080000 {
+			// reg = <0x40080000 0x120>;
+			/* instance, signal, port_pin, pingroup, config [, flags] */
+			/* SCI 0 Pin Group A */
+            DT_RENESAS_RA_PORT(sci0, txd0, 1, 1, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, rxd0, 1, 0, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, mosi0, 1, 1, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, miso0, 1, 0, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, sck0, 1, 2, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, sda0, 1, 1, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, scl0, 1, 0, a, CFG_SCI_EVEN);
+			/* SCI 0 Pin Group B */
+			DT_RENESAS_RA_PORT(sci0, txd0, 4, 11, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, rxd0, 4, 10, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, mosi0, 4, 11, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, miso0, 4, 10, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, sck0, 4, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, sda0, 4, 11, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci0, scl0, 4, 10, b, CFG_SCI_EVEN);
+
+			/* SCI 1 Pin Group A */
+			DT_RENESAS_RA_PORT(sci1, txd1, 2, 13, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, rxd1, 2, 12, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, mosi1, 2, 13, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, miso1, 2, 12, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, sck1, 1, 0, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, sda1, 2, 13, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, scl1, 2, 12, a, CFG_SCI_ODD);
+			/* SCI 1 Pin Group B Only Available on 144 pin */
+			DT_RENESAS_RA_PORT(sci1, txd1, 7, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, rxd1, 7, 8, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, mosi1, 7, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, miso1, 7, 8, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, sck1, 7, 10, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, sda1, 7, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci1, scl1, 7, 8, b, CFG_SCI_ODD);
+
+			/* SCI 2 Pin Group A */
+			DT_RENESAS_RA_PORT(sci2, txd2, 3, 2, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, rxd2, 3, 1, a, CFG_SCI_EVEN);
+			/* Simple SPI (Pin Group A) only on 144 pin */
+			DT_RENESAS_RA_PORT(sci2, mosi2, 3, 2, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, miso2, 3, 1, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, sck2, 2, 2, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, sda2, 3, 2, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, scl2, 3, 1, a, CFG_SCI_EVEN);
+			/* SCI 2 Pin Group B */
+			DT_RENESAS_RA_PORT(sci2, txd2, 1, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, rxd2, 1, 13, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, mosi2, 1, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, miso2, 1, 13, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, sck2, 1, 11, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, sda2, 1, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci2, scl2, 1, 13, b, CFG_SCI_EVEN);
+
+			/* SCI 3 Pin Group A */
+			DT_RENESAS_RA_PORT(sci3, txd3, 4, 9, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, rxd3, 4, 8, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, mosi3, 4, 9, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, miso3, 4, 8, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, sck3, 4, 10, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, sda3, 4, 9, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, scl3, 4, 8, a, CFG_SCI_ODD);
+
+			/* SCI 3 Pin Group C Only Available on 144 pin */
+			DT_RENESAS_RA_PORT(sci3, txd3, 3, 10, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, rxd3, 3, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, mosi3, 3, 10, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, miso3, 3, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, sck3, 3, 11, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, sda3, 3, 10, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci3, scl3, 3, 9, b, CFG_SCI_ODD);
+
+			/* SCI 4 Pin Group A */
+			DT_RENESAS_RA_PORT(sci4, txd4, 2, 5, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, rxd4, 2, 6, a, CFG_SCI_EVEN);
+			/* Simple SPI (Pin Group A) only on 144 pin */
+			DT_RENESAS_RA_PORT(sci4, mosi4, 2, 5, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, miso4, 2, 6, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, sck4, 2, 4, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, sda4, 2, 5, a, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, scl4, 2, 6, a, CFG_SCI_EVEN);
+
+			/* SCI 4 Pin Group B Only Available on 144 pin */
+			DT_RENESAS_RA_PORT(sci4, txd4, 5, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, rxd4, 5, 11, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, mosi4, 5, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, miso4, 5, 11, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, sck4, 4, 0, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, sda4, 5, 12, b, CFG_SCI_EVEN);
+			DT_RENESAS_RA_PORT(sci4, scl4, 5, 11, b, CFG_SCI_EVEN);
+
+			/* SCI 9 Pin Group A Only Available on 144 pin */
+			DT_RENESAS_RA_PORT(sci9, txd9, 2, 3, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, rxd9, 2, 2, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, mosi9, 2, 3, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, miso9, 2, 2, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, sck9, 2, 4, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, sda9, 2, 3, a, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, scl9, 2, 2, a, CFG_SCI_ODD);
+
+			/* SCI 9 Pin Group B */
+			DT_RENESAS_RA_PORT(sci9, txd9, 1, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, rxd9, 1, 10, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, mosi9, 1, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, miso9, 1, 10, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, sck9, 1, 11, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, sda9, 1, 9, b, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, scl9, 1, 10, b, CFG_SCI_ODD);
+
+			/* SCI 9 Pin Group C */
+			DT_RENESAS_RA_PORT(sci9, txd9, 6, 2, c, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, rxd9, 6, 1, c, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, mosi9, 6, 2, c, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, miso9, 6, 1, c, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, sck9, 6, 0, c, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, sda9, 6, 2, c, CFG_SCI_ODD);
+			DT_RENESAS_RA_PORT(sci9, scl9, 6, 1, c, CFG_SCI_ODD);
+
+			/* SPI0 Pin Group A only available on 144 pin*/
+			DT_RENESAS_RA_PORT(spi0, mosi, 2, 2, a, CFG_SPI);
+			DT_RENESAS_RA_PORT(spi0, miso, 2, 3, a, CFG_SPI);
+			DT_RENESAS_RA_PORT(spi0, sck, 2, 4, a, CFG_SPI);
+
+			/* SPI0 Pin Group B */
+			DT_RENESAS_RA_PORT(spi0, mosi, 1, 10, b, CFG_SPI);
+			DT_RENESAS_RA_PORT(spi0, miso, 1, 9, b, CFG_SPI);
+			DT_RENESAS_RA_PORT(spi0, sck, 1, 11, b, CFG_SPI);
+
+			/* SPI0 Pin Group C only available on 144 pin*/
+			DT_RENESAS_RA_PORT(spi0, mosi, 7, 0, c, CFG_SPI);
+			DT_RENESAS_RA_PORT(spi0, miso, 7, 1, c, CFG_SPI);
+			DT_RENESAS_RA_PORT(spi0, sck, 7, 2, c, CFG_SPI);
+
+			/* I2C0 Pin Group A */
+			DT_RENESAS_RA_PORT(i2c0, sda0, 4, 1, a, CFG_I2C);
+			DT_RENESAS_RA_PORT(i2c0, sck0, 4, 0, a, CFG_I2C);
+
+			/* I2C0 Pin Group B */
+			DT_RENESAS_RA_PORT(i2c0, sda0, 4, 7, b, CFG_I2C);
+			DT_RENESAS_RA_PORT(i2c0, sck0, 4, 8, b, CFG_I2C);
+
+			/* I2C1 Pin Group A only available on 144 pin */
+			DT_RENESAS_RA_PORT(i2c1, sda1, 5, 11, a,CFG_I2C);
+			DT_RENESAS_RA_PORT(i2c1, sck1, 5, 12, a, CFG_I2C);
+
+			/* I2C1 Pin Group B */
+			DT_RENESAS_RA_PORT(i2c1, sda1, 2, 6, b, CFG_I2C);
+			DT_RENESAS_RA_PORT(i2c1, sck1, 2, 5, b, CFG_I2C);
+
+		};
+	};
+};

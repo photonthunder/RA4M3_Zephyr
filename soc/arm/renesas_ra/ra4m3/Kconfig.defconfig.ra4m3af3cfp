@@ -1,0 +1,9 @@
+# Using: R7FA4M3AF3CFP - 100 pins
+
+if SOC_PART_NUMBER_RA4M3AF3CFP
+
+config SOC_PART_NUMBER
+    string
+	default "ra4m3af3cfp"
+
+endif

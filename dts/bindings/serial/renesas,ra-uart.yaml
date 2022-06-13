@@ -1,0 +1,46 @@
+description: Renesas RA UART Driver
+
+compatible: "renesas,ra-uart"
+
+include: uart-controller.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true
+      description: RXI (Receive Data Full), TXI (Transmit Data Empty), TEI (Transmit End), ERI (Receive Error)
+
+    clocks:
+      required: false
+
+    clock-names:
+      required: false
+
+    rxpo:
+      type: int
+      required: false
+      description: Receive Data Pinout
+
+    txpo:
+      type: int
+      required: false
+      description: Transmit Data Pinout
+
+    instance-idx:
+      type: int
+      description: peripheral instance number
+      required: true
+
+    pinctrl-0:
+      type: phandles
+      description: |
+        PIO pin configuration for SCI RXD & TXD signals.  We expect that
+        the phandles will reference pinctrl nodes.  These nodes will
+        have a nodelabel that matches the Renesas SoC HAL defines and
+        be of the form p<port><pin><periph>.
+
+        For example the UART on RA would be
+           pinctrl-0 = <&p206_uart_urxd &p205_uart_utxd>;
+      required: true

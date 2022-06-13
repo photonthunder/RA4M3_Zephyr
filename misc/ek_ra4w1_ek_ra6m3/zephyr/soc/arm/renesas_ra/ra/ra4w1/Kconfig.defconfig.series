@@ -1,0 +1,46 @@
+# Renesas RA4W1 MCU series configuration options
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_PART_NUMBER_RA4W1
+
+config SOC_SERIES
+	default "ra"
+
+config SOC
+	default "ra4w1"
+
+config SOC_PART_NUMBER
+	default "r7fa4w1ad"
+
+#
+# RA family has total 47 peripherals capable of
+# generating interrupts.
+#
+config NUM_IRQS
+	default 47
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 32000000
+
+config BLE_RA4W1
+	bool "Enable Renesas BLE API"
+	select RENESAS_DRIVER_AGT
+	select RENESAS_DRIVER_FLASH_LP
+	select RENESAS_DRIVER_GPT
+	select RENESAS_DRIVER_ICU
+	select RENESAS_DRIVER_IOPORT
+	
+config USE_RENESAS_BSP
+	bool "renesas_bsp"
+	default "y"
+	select RENESAS_BSP_DELAY
+	select RENESAS_BSP_IRQ
+	select RENESAS_BSP_REG_PROT
+	select RENESAS_BSP_CLOCKS
+	select RENESAS_BSP_COMMON
+	select RENESAS_BSP_API
+
+
+endif # SOC_SERIES_RA

@@ -1,0 +1,7 @@
+# Renesas EK-RA4M3 board configuration
+
+config BOARD_EK_RA4M3
+	bool "Renesas RA4M3 Board"
+	depends on SOC_PART_NUMBER_RA4M3AF3CFB
+
+

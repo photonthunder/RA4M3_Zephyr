@@ -1,0 +1,16 @@
+# Renesas RA MCU family configuration options
+
+config SOC_FAMILY_RA
+	bool
+	select HAS_SEGGER_RTT
+	select BUILD_OUTPUT_HEX
+
+if SOC_FAMILY_RA
+
+config SOC_FAMILY
+	string
+	default "renesas_ra"
+
+rsource "*/Kconfig.soc"
+
+endif # SOC_FAMILY_RA

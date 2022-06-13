@@ -1,0 +1,9 @@
+# Renesas Flexible software package
+
+# Copyright (c) 2016 Piotr Mienkowski
+# SPDX-License-Identifier: Apache-2.0
+
+config FSP
+	bool
+	select HAS_CMSIS_CORE
+	depends on SOC_FAMILY_RA

@@ -1,0 +1,1 @@
+zephyr_library_sources_ifdef(CONFIG_RENESAS_DRIVER_IOPORT r_ioport.c)

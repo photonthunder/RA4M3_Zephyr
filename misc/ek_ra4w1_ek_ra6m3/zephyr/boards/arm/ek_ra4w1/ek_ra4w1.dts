@@ -1,0 +1,44 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/dts-v1/;
+
+#include <renesas/ra4w1.dtsi>
+
+/ {
+	model = "EK-RA4W1 with an Renesas R7FA4W1AD SoC";
+	compatible = "renesas,r7fa4w1ad", "renesas,ra4w1";
+
+	aliases {
+		uart-0 = &sci4;
+		led0 = &green_led;
+	};
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,console = &sci4;
+		zephyr,shell-uart = &sci4;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		green_led: led_0 {
+			gpios = <&port1 6 0>;
+			label = "User LED";
+		};
+	};
+};
+
+&cpu0 {
+	clock-frequency = <32000000>;
+};
+
+&wdt {
+	status = "okay";
+};
+
+&sci4 {
+	status = "okay";
+	current-speed = <115200>;
+};

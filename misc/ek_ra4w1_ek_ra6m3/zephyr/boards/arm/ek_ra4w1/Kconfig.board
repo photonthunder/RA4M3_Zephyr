@@ -1,0 +1,17 @@
+# Renesas EK-RA4W1 board configuration
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_EK_RA4W1
+	bool "Renesas RA4W1 Board"
+	depends on SOC_PART_NUMBER_RA4W1
+
+config SCI_RA
+	bool "Renesas RA serial comunication interface"
+	
+config SCI_UART_CFG_RX_ENABLE
+	bool "Enable sci uart reception"
+	
+config SCI_UART_CFG_TX_ENABLE
+	bool "Enable sci uart transmition"

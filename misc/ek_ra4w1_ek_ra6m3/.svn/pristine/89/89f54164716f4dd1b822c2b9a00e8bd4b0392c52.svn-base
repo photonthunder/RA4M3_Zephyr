@@ -1,0 +1,30 @@
+description: RA family SCI
+
+compatible: "renesas,ra-sci"
+
+include: uart-controller.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true
+
+    instance-idx:
+      type: int
+      description: peripheral instance number
+      required: true
+
+    pinctrl-0:
+      type: phandles
+      description: |
+        PIO pin configuration for SCI & SCI signals.  We expect that
+        the phandles will reference pinctrl nodes.  These nodes will
+        have a nodelabel that matches the Renesas SoC HAL defines and
+        be of the form p<port><pin><periph>.
+
+        For example the UART on RA would be
+           pinctrl-0 = <&p206_uart_urxd &p205_uart_utxd>;
+
+      required: true

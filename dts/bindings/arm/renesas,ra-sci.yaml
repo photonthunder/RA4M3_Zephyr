@@ -1,0 +1,17 @@
+description: RA family SCI (UART, SPI, I2C)
+
+compatible: "renesas,ra-sci"
+
+include: base.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true
+
+    instance-idx:
+      type: int
+      description: peripheral instance number
+      required: true

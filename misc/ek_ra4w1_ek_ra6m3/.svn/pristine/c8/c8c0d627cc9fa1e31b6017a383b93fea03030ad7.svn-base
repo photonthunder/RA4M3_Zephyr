@@ -1,0 +1,11 @@
+# Renesas RA6M3 MCU series
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_RA6M3
+	bool "RA6M3"
+
+if SOC_SERIES_RA
+
+endif # SOC_SERIES_RA

@@ -1,0 +1,11 @@
+# Renesas RA UART configuration options
+
+# Copyright (c) 2020 MXT Creation
+
+config UART_RA
+	bool "Renesas RA MCU family UART driver"
+	depends on SOC_FAMILY_RA
+	select SERIAL_HAS_DRIVER
+	select SERIAL_SUPPORT_INTERRUPT
+	help
+	  This option enables the UARTx driver for Renesas RA MCUs.

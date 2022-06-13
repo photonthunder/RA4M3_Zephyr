@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Copyright (c) 2019 ML!PA Consulting GmbH
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_FAMILY_RA
+
+choice
+	prompt "Main clock source"
+	help
+	  Selects the clock source
+
+config SOC_RA_SUBCLK32K_AS_MAIN
+	bool "SUBCLK32K"
+
+config SOC_RA_PLL_AS_MAIN
+	bool "PLL"
+
+config SOC_RA_XOSC_20MHZ_AS_MAIN
+	bool "XOSC20MHZ"
+
+endchoice
+
+endif

@@ -1,0 +1,14 @@
+# EK-RA6M2 Board configuration
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_EK_RA6M2
+
+config BOARD
+	default "ek-ra6m3"
+
+config GPIO
+	default y
+
+endif # BOARD_EK_RA6M2

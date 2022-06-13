@@ -1,0 +1,17 @@
+# Renesas EK-RA6M3 board configuration
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_EK_RA6M3
+	bool "Renesas RA6M3 Board"
+	depends on SOC_PART_NUMBER_RA6M3
+
+config SCI_RA
+	bool "Renesas RA serial comunication interface"
+	
+config SCI_UART_CFG_RX_ENABLE
+	bool "Enable sci uart reception"
+	
+config SCI_UART_CFG_TX_ENABLE
+	bool "Enable sci uart transmition"

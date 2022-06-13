@@ -1,0 +1,42 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/dts-v1/;
+
+#include <renesas/ra4m3.dtsi>
+
+/ {
+	model = "EK_RA4M3";
+	compatible = "renesas,ra4m3af3cfb", "renesas,ra4m3";
+
+	aliases {
+		uart-0 = &sci0;
+		led0 = &green_led;
+	};
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,console = &sci4;
+		zephyr,shell-uart = &sci4;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		green_led: led_0 {
+			gpios = <&port4 4 0>;
+			label = "User LED";
+		};
+	};
+};
+
+&cpu0 {
+	clock-frequency = <20000000>;
+};
+
+&sci0 {
+	compatible = "renesas,ra-uart";
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&p11a_sci0_txd0 &p10a_sci0_rxd0>;
+};

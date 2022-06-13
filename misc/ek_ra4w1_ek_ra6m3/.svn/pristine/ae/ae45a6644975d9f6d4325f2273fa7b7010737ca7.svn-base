@@ -1,0 +1,9 @@
+# RA GPIO configuration options
+
+# Copyright (c) 2018, Renesas
+# SPDX-License-Identifier: Apache-2.0
+
+config GPIO_RA
+	bool "RA GPIO driver"
+	help
+	  Enable the RA GPIO driver.

@@ -1,0 +1,199 @@
+#include <arm/armv8-m.dtsi>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/i2c/i2c.h>
+#include <dt-bindings/pinctrl/ra-pinctrl.h>
+#include "ra4m3-pinctrl.dtsi"
+
+/ {
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu0: cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-m33";
+			reg = <0>;
+		};
+	};
+		
+	soc {
+		sram0: memory@40002000 {
+			compatible = "mmio-sram";
+			reg = <0x40002000 0x20000>;
+		};
+		
+		flash-controller@407fe000 {
+			reg = <0x407fe000 0x1000>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		
+			flash0: flash@0 {
+				reg = <0x0 0x100000>;
+			};
+		};
+		
+		wdt: watchdog@40083400 {
+			compatible = "renesas,ra-watchdog";
+			reg = <0x40083400 0x20>;
+			interrupts = <83 0>;
+			label = "WATCHDOG_0";
+			status = "disabled";
+		};
+		
+		sci0: serial@40118000 {
+			compatible = "renesas,ra-sci";
+			reg = <0x40118000 0x100>;
+			interrupts = <4 0>, <5 0>, <6 0>, <7 0>;
+			status = "disabled";
+			label = "SCI_0";
+			instance-idx = <0>;
+		};
+		
+		sci1: serial@40118100 {
+			compatible = "renesas,ra-sci";
+			reg = <0x40118100 0x100>;
+			interrupts = <12 0>, <13 0>, <14 0>, <15 0>;
+			status = "disabled";
+			label = "SCI_1";
+			instance-idx = <1>;
+		};
+		
+		sci2: serial@40118200 {
+			compatible = "renesas,ra-sci";
+			reg = <0x40118200 0x100>;
+			interrupts = <16 0>, <17 0>, <18 0>, <19 0>;
+			status = "disabled";
+			label = "SCI_2";
+			instance-idx = <2>;
+		};
+
+		sci3: serial@40118300 {
+			compatible = "renesas,ra-sci";
+			reg = <0x40118300 0x100>;
+			interrupts = <8 0>, <9 0>, <10 0>, <11 0>;
+			status = "disabled";
+			label = "SCI_3";
+			instance-idx = <3>;
+		};
+
+		sci4: serial@40118400 {
+			compatible = "renesas,ra-sci";
+			reg = <0x40118400 0x100>;
+			interrupts = <20 0>, <21 0>, <22 0>, <23 0>;
+			status = "disabled";
+			label = "SCI_4";
+			instance-idx = <4>;
+		};
+		
+		sci9: serial@40118900 {
+			compatible = "renesas,ra-sci";
+			reg = <0x40118900 0x100>;
+			interrupts = <24 0>, <25 0>, <26 0>, <27 0>;
+			status = "disabled";
+			label = "SCI_9";
+			instance-idx = <9>;
+		};
+		
+		pinctrl@40080000 {
+			compatible = "renesas,ra-pinctrl";
+			#address-cells = <1>;
+			#size-cells = <1>;
+			reg = <0x40080000 0x120>;
+
+			port0: port@40080000 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x40080000 0x20>;
+					label = "PORT0";
+					port = <0>;
+					#renesas,pin-cells = <2>;
+			};
+			
+			port1: port@40080020 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x40080020 0x20>;
+					label = "PORT1";
+					port = <1>;
+					#renesas,pin-cells = <2>;
+			};
+			
+			port2: port@40080040 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x40080040 0x20>;
+					label = "PORT2";
+					port = <2>;
+					#renesas,pin-cells = <2>;
+			};
+			
+			port3: port@40080060 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x40080060 0x20>;
+					label = "PORT3";
+					port = <3>;
+					#renesas,pin-cells = <2>;
+			};
+			
+			port4: port@40080080 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x40080080 0x20>;
+					label = "PORT4";
+					port = <4>;
+					#renesas,pin-cells = <2>;
+			};
+			
+			port5: port@400800A0 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x400800A0 0x20>;
+					label = "PORT5";
+					port = <5>;
+					#renesas,pin-cells = <2>;
+			};
+
+			port6: port@400800C0 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x400800C0 0x20>;
+					label = "PORT6";
+					port = <6>;
+					#renesas,pin-cells = <2>;
+			};
+
+			port7: port@400800E0 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x400800E0 0x20>;
+					label = "PORT7";
+					port = <7>;
+					#renesas,pin-cells = <2>;
+			};
+			
+			port8: port@40080100 {
+					compatible = "renesas,ra-gpio";
+					gpio-controller;
+					#gpio-cells = <2>;
+					reg = <0x40080100 0x20>;
+					label = "PORT8";
+					port = <8>;
+					#renesas,pin-cells = <2>;
+			};
+
+		};
+	};
+};
+
+&nvic {
+	arm,num-irq-priority-bits = <4>;
+};

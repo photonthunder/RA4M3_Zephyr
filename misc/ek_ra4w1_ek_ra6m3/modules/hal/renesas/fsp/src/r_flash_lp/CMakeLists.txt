@@ -1,0 +1,1 @@
+zephyr_library_sources_ifdef(CONFIG_RENESAS_DRIVER_FLASH_LP r_flash_lp.c)

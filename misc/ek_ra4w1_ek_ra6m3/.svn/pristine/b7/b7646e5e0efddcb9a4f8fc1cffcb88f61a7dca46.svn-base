@@ -1,0 +1,11 @@
+# Renesas RA4W1 MCU series
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_RA4W1
+	bool "RA4W1"
+
+if SOC_SERIES_RA
+
+endif # SOC_SERIES_RA

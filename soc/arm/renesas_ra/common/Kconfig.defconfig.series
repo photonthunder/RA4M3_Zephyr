@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_FAMILY_RA
+
+config NUM_IRQS
+	default 95
+
+config GPIO_RA
+	default GPIO
+
+#config HWINFO_RA
+#	default HWINFO
+
+#config I2C_RA
+#	default I2C
+
+#config PINMUX_RA
+#	default PINMUX
+
+
+#config SPI_RA
+#	default SPI
+
+config UART_RA
+	default SERIAL
+
+#config WDT_RA
+#	default WATCHDOG
+
+endif # SOC_FAMILY_RA

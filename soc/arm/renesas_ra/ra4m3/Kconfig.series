@@ -1,0 +1,29 @@
+# Renesas RA4M3 MCU series
+
+config SOC_SERIES_RA4M3
+	bool "Renesas RA4M3 MCU"
+	select ARM
+	select CPU_CORTEX_M33
+	select SOC_FAMILY_RA
+	select CPU_HAS_ARM_MPU
+	select CPU_CORTEX_M_HAS_DWT
+	select HAS_RA_ROM_REG
+	select FSP
+	select CPU_HAS_FPU
+	select FPU
+	select FLOAT
+	help
+	  Enable support for Renesas RA4M3 Cortex-M33 microcontrollers.
+
+#config SOC_SERIES_RA4M3
+#	bool "Renesas RA4M3 MCU"
+#	select ARM
+#	select CPU_CORTEX_M33
+#	select SOC_FAMILY_RA
+#   select ARM_TRUSTZONE_M
+#	select CPU_HAS_ARM_MPU
+#	select CPU_HAS_FPU
+#	select ARMV8_M_DSP
+#	select CPU_CORTEX_M_HAS_DWT
+#	help
+#	  Enable support for Renesas RA4M3 Cortex-M33 microcontrollers.

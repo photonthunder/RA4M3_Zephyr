@@ -1,0 +1,5 @@
+# EK-RA4M3 Board configuration
+
+config BOARD
+	default "EK_RA4M3"
+	depends on BOARD_EK_RA4M3

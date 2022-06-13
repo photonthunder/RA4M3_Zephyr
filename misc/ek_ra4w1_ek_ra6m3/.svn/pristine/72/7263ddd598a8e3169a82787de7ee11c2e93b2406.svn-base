@@ -1,0 +1,13 @@
+identifier: ek_ra6m3
+name: EK-RA6M3
+type: mcu
+arch: arm
+ram: 96
+flash: 512
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - watchdog
+  - gpio

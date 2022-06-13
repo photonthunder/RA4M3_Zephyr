@@ -1,0 +1,13 @@
+identifier: ek_ra4w1
+name: EK-RA4W1
+type: mcu
+arch: arm
+ram: 96
+flash: 512
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - watchdog
+  - gpio

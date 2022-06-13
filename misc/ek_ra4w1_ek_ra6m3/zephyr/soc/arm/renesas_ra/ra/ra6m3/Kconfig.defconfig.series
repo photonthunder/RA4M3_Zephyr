@@ -1,0 +1,27 @@
+# Renesas RA6M3 MCU series configuration options
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_PART_NUMBER_RA6M3
+
+config SOC_SERIES
+	default "ra"
+
+config SOC
+	default "ra6m3"
+
+config SOC_PART_NUMBER
+	default "r7fa6m3ah"
+
+#
+# RA family has total 47 peripherals capable of
+# generating interrupts.
+#
+config NUM_IRQS
+	default 111
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 120000000
+
+endif # SOC_SERIES_RA

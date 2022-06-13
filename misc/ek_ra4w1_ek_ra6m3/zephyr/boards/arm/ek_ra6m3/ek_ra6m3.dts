@@ -1,0 +1,56 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/dts-v1/;
+
+#include <renesas/ra6m3.dtsi>
+
+/ {
+	model = "EK-RA6M3 with an Renesas R7FA6M3AH SoC";
+	compatible = "renesas,r7fa6m3ah", "renesas,ra6m3";
+
+	aliases {
+		uart-0 = &sci4;
+		led0 = &blue_led;
+		led1 = &green_led;
+		led2 = &red_led;
+	};
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,console = &sci4;
+		zephyr,shell-uart = &sci4;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		blue_led: led_0 {
+			gpios = <&port4 3 0>;
+			label = "User LED Blue";
+		};
+		
+		green_led: led_1 {
+			gpios = <&port4 0 0>;
+			label = "User LED Green";
+		};
+		
+		red_led: led_2 {
+			gpios = <&port1 0 0>;
+			label = "User LED Red";
+		};
+	};
+};
+
+&cpu0 {
+	clock-frequency = <120000000>;
+};
+
+&wdt {
+	status = "okay";
+};
+
+&sci4 {
+	status = "okay";
+	current-speed = <115200>;
+};

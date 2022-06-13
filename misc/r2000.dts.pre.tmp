@@ -1,0 +1,919 @@
+/dts-v1/;
+/ {
+ #address-cells = <1>;
+ #size-cells = <1>;
+ chosen { };
+ aliases { };
+};
+/ {
+ soc {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  compatible = "simple-bus";
+  interrupt-parent = <&nvic>;
+  ranges;
+  nvic: interrupt-controller@e000e100 {
+   #address-cells = <1>;
+   compatible = "arm,v7m-nvic";
+   reg = <0xe000e100 0xc00>;
+   interrupt-controller;
+   #interrupt-cells = <2>;
+  };
+  systick: timer@e000e010 {
+   compatible = "arm,armv7m-systick";
+   reg = <0xe000e010 0x10>;
+  };
+ };
+};
+/ {
+ soc {
+  pinctrl@41008000 {
+   pa8c_sercom0_pad0: pa8c_sercom0_pad0 { atmel,pins = < &porta 8 2 >; pinmux-enable; };
+   pa9c_sercom0_pad1: pa9c_sercom0_pad1 { atmel,pins = < &porta 9 2 >; pinmux-enable; };
+   pa10c_sercom0_pad2: pa10c_sercom0_pad2 { atmel,pins = < &porta 10 2 >; pinmux-enable; };
+   pa11c_sercom0_pad3: pa11c_sercom0_pad3 { atmel,pins = < &porta 11 2 >; pinmux-enable; };
+   pb24c_sercom0_pad0: pb24c_sercom0_pad0 { atmel,pins = < &portb 24 2 >; pinmux-enable; };
+   pb25c_sercom0_pad1: pb25c_sercom0_pad1 { atmel,pins = < &portb 25 2 >; pinmux-enable; };
+   pc24c_sercom0_pad2: pc24c_sercom0_pad2 { atmel,pins = < &portc 24 2 >; pinmux-enable; };
+   pc25c_sercom0_pad3: pc25c_sercom0_pad3 { atmel,pins = < &portc 25 2 >; pinmux-enable; };
+   pa4d_sercom0_pad0: pa4d_sercom0_pad0 { atmel,pins = < &porta 4 3 >; pinmux-enable; };
+   pa5d_sercom0_pad1: pa5d_sercom0_pad1 { atmel,pins = < &porta 5 3 >; pinmux-enable; };
+   pa6d_sercom0_pad2: pa6d_sercom0_pad2 { atmel,pins = < &porta 6 3 >; pinmux-enable; };
+   pa7d_sercom0_pad3: pa7d_sercom0_pad3 { atmel,pins = < &porta 7 3 >; pinmux-enable; };
+   pc17d_sercom0_pad0: pc17d_sercom0_pad0 { atmel,pins = < &portc 17 3 >; pinmux-enable; };
+   pc16d_sercom0_pad1: pc16d_sercom0_pad1 { atmel,pins = < &portc 16 3 >; pinmux-enable; };
+   pc18d_sercom0_pad2: pc18d_sercom0_pad2 { atmel,pins = < &portc 18 3 >; pinmux-enable; };
+   pc19d_sercom0_pad3: pc19d_sercom0_pad3 { atmel,pins = < &portc 19 3 >; pinmux-enable; };
+   pa16c_sercom1_pad0: pa16c_sercom1_pad0 { atmel,pins = < &porta 16 2 >; pinmux-enable; };
+   pa17c_sercom1_pad1: pa17c_sercom1_pad1 { atmel,pins = < &porta 17 2 >; pinmux-enable; };
+   pa18c_sercom1_pad2: pa18c_sercom1_pad2 { atmel,pins = < &porta 18 2 >; pinmux-enable; };
+   pa19c_sercom1_pad3: pa19c_sercom1_pad3 { atmel,pins = < &porta 19 2 >; pinmux-enable; };
+   pc22c_sercom1_pad0: pc22c_sercom1_pad0 { atmel,pins = < &portc 22 2 >; pinmux-enable; };
+   pc23c_sercom1_pad1: pc23c_sercom1_pad1 { atmel,pins = < &portc 23 2 >; pinmux-enable; };
+   pd20c_sercom1_pad2: pd20c_sercom1_pad2 { atmel,pins = < &portd 20 2 >; pinmux-enable; };
+   pd21c_sercom1_pad3: pd21c_sercom1_pad3 { atmel,pins = < &portd 21 2 >; pinmux-enable; };
+   pc27c_sercom1_pad0: pc27c_sercom1_pad0 { atmel,pins = < &portc 27 2 >; pinmux-enable; };
+   pc28c_sercom1_pad1: pc28c_sercom1_pad1 { atmel,pins = < &portc 28 2 >; pinmux-enable; };
+   pb22c_sercom1_pad2: pb22c_sercom1_pad2 { atmel,pins = < &portb 22 2 >; pinmux-enable; };
+   pb23c_sercom1_pad3: pb23c_sercom1_pad3 { atmel,pins = < &portb 23 2 >; pinmux-enable; };
+   pa0d_sercom1_pad0: pa0d_sercom1_pad0 { atmel,pins = < &porta 0 3 >; pinmux-enable; };
+   pa1d_sercom1_pad1: pa1d_sercom1_pad1 { atmel,pins = < &porta 1 3 >; pinmux-enable; };
+   pa30d_sercom1_pad2: pa30d_sercom1_pad2 { atmel,pins = < &porta 30 3 >; pinmux-enable; };
+   pa31d_sercom1_pad3: pa31d_sercom1_pad3 { atmel,pins = < &porta 31 3 >; pinmux-enable; };
+   pa12c_sercom2_pad0: pa12c_sercom2_pad0 { atmel,pins = < &porta 12 2 >; pinmux-enable; };
+   pa13c_sercom2_pad1: pa13c_sercom2_pad1 { atmel,pins = < &porta 13 2 >; pinmux-enable; };
+   pa14c_sercom2_pad2: pa14c_sercom2_pad2 { atmel,pins = < &porta 14 2 >; pinmux-enable; };
+   pa15c_sercom2_pad3: pa15c_sercom2_pad3 { atmel,pins = < &porta 15 2 >; pinmux-enable; };
+   pb26c_sercom2_pad0: pb26c_sercom2_pad0 { atmel,pins = < &portb 26 2 >; pinmux-enable; };
+   pb27c_sercom2_pad1: pb27c_sercom2_pad1 { atmel,pins = < &portb 27 2 >; pinmux-enable; };
+   pb28c_sercom2_pad2: pb28c_sercom2_pad2 { atmel,pins = < &portb 28 2 >; pinmux-enable; };
+   pb29c_sercom2_pad3: pb29c_sercom2_pad3 { atmel,pins = < &portb 29 2 >; pinmux-enable; };
+   pa8d_sercom2_pad0: pa8d_sercom2_pad0 { atmel,pins = < &porta 8 3 >; pinmux-enable; };
+   pa9d_sercom2_pad1: pa9d_sercom2_pad1 { atmel,pins = < &porta 9 3 >; pinmux-enable; };
+   pa10d_sercom2_pad2: pa10d_sercom2_pad2 { atmel,pins = < &porta 10 3 >; pinmux-enable; };
+   pa11d_sercom2_pad3: pa11d_sercom2_pad3 { atmel,pins = < &porta 11 3 >; pinmux-enable; };
+   pb24d_sercom2_pad0: pb24d_sercom2_pad0 { atmel,pins = < &portb 24 3 >; pinmux-enable; };
+   pb25d_sercom2_pad1: pb25d_sercom2_pad1 { atmel,pins = < &portb 25 3 >; pinmux-enable; };
+   pc24d_sercom2_pad2: pc24d_sercom2_pad2 { atmel,pins = < &portc 24 3 >; pinmux-enable; };
+   pc25d_sercom2_pad3: pc25d_sercom2_pad3 { atmel,pins = < &portc 25 3 >; pinmux-enable; };
+   pa22c_sercom3_pad0: pa22c_sercom3_pad0 { atmel,pins = < &porta 22 2 >; pinmux-enable; };
+   pa23c_sercom3_pad1: pa23c_sercom3_pad1 { atmel,pins = < &porta 23 2 >; pinmux-enable; };
+   pa24c_sercom3_pad2: pa24c_sercom3_pad2 { atmel,pins = < &porta 24 2 >; pinmux-enable; };
+   pa25c_sercom3_pad3: pa25c_sercom3_pad3 { atmel,pins = < &porta 25 2 >; pinmux-enable; };
+   pb20c_sercom3_pad0: pb20c_sercom3_pad0 { atmel,pins = < &portb 20 2 >; pinmux-enable; };
+   pb21c_sercom3_pad1: pb21c_sercom3_pad1 { atmel,pins = < &portb 21 2 >; pinmux-enable; };
+   pa20d_sercom3_pad2: pa20d_sercom3_pad2 { atmel,pins = < &porta 20 3 >; pinmux-enable; };
+   pa21d_sercom3_pad3: pa21d_sercom3_pad3 { atmel,pins = < &porta 21 3 >; pinmux-enable; };
+   pa17d_sercom3_pad0: pa17d_sercom3_pad0 { atmel,pins = < &porta 17 3 >; pinmux-enable; };
+   pa16d_sercom3_pad1: pa16d_sercom3_pad1 { atmel,pins = < &porta 16 3 >; pinmux-enable; };
+   pa18d_sercom3_pad2: pa18d_sercom3_pad2 { atmel,pins = < &porta 18 3 >; pinmux-enable; };
+   pa19d_sercom3_pad3: pa19d_sercom3_pad3 { atmel,pins = < &porta 19 3 >; pinmux-enable; };
+   pc23d_sercom3_pad0: pc23d_sercom3_pad0 { atmel,pins = < &portc 23 3 >; pinmux-enable; };
+   pc22d_sercom3_pad1: pc22d_sercom3_pad1 { atmel,pins = < &portc 22 3 >; pinmux-enable; };
+   pd20d_sercom3_pad2: pd20d_sercom3_pad2 { atmel,pins = < &portd 20 3 >; pinmux-enable; };
+   pd21d_sercom3_pad3: pd21d_sercom3_pad3 { atmel,pins = < &portd 21 3 >; pinmux-enable; };
+   pb12c_sercom4_pad0: pb12c_sercom4_pad0 { atmel,pins = < &portb 12 2 >; pinmux-enable; };
+   pb13c_sercom4_pad1: pb13c_sercom4_pad1 { atmel,pins = < &portb 13 2 >; pinmux-enable; };
+   pb14c_sercom4_pad2: pb14c_sercom4_pad2 { atmel,pins = < &portb 14 2 >; pinmux-enable; };
+   pb15c_sercom4_pad3: pb15c_sercom4_pad3 { atmel,pins = < &portb 15 2 >; pinmux-enable; };
+   pb8d_sercom4_pad0: pb8d_sercom4_pad0 { atmel,pins = < &portb 8 3 >; pinmux-enable; };
+   pb9d_sercom4_pad1: pb9d_sercom4_pad1 { atmel,pins = < &portb 9 3 >; pinmux-enable; };
+   pb10d_sercom4_pad2: pb10d_sercom4_pad2 { atmel,pins = < &portb 10 3 >; pinmux-enable; };
+   pb11d_sercom4_pad3: pb11d_sercom4_pad3 { atmel,pins = < &portb 11 3 >; pinmux-enable; };
+   pa13d_sercom4_pad0: pa13d_sercom4_pad0 { atmel,pins = < &porta 13 3 >; pinmux-enable; };
+   pa12d_sercom4_pad1: pa12d_sercom4_pad1 { atmel,pins = < &porta 12 3 >; pinmux-enable; };
+   pa14d_sercom4_pad2: pa14d_sercom4_pad2 { atmel,pins = < &porta 14 3 >; pinmux-enable; };
+   pa15d_sercom4_pad3: pa15d_sercom4_pad3 { atmel,pins = < &porta 15 3 >; pinmux-enable; };
+   pb27d_sercom4_pad0: pb27d_sercom4_pad0 { atmel,pins = < &portb 27 3 >; pinmux-enable; };
+   pb26d_sercom4_pad1: pb26d_sercom4_pad1 { atmel,pins = < &portb 26 3 >; pinmux-enable; };
+   pb28d_sercom4_pad2: pb28d_sercom4_pad2 { atmel,pins = < &portb 28 3 >; pinmux-enable; };
+   pb29d_sercom4_pad3: pb29d_sercom4_pad3 { atmel,pins = < &portb 29 3 >; pinmux-enable; };
+   pb16c_sercom5_pad0: pb16c_sercom5_pad0 { atmel,pins = < &portb 16 2 >; pinmux-enable; };
+   pb17c_sercom5_pad1: pb17c_sercom5_pad1 { atmel,pins = < &portb 17 2 >; pinmux-enable; };
+   pb18c_sercom5_pad2: pb18c_sercom5_pad2 { atmel,pins = < &portb 18 2 >; pinmux-enable; };
+   pb19c_sercom5_pad3: pb19c_sercom5_pad3 { atmel,pins = < &portb 19 2 >; pinmux-enable; };
+   pa23d_sercom5_pad0: pa23d_sercom5_pad0 { atmel,pins = < &porta 23 3 >; pinmux-enable; };
+   pa22d_sercom5_pad1: pa22d_sercom5_pad1 { atmel,pins = < &porta 22 3 >; pinmux-enable; };
+   pa20c_sercom5_pad2: pa20c_sercom5_pad2 { atmel,pins = < &porta 20 2 >; pinmux-enable; };
+   pa21c_sercom5_pad3: pa21c_sercom5_pad3 { atmel,pins = < &porta 21 2 >; pinmux-enable; };
+   pa24d_sercom5_pad2: pa24d_sercom5_pad2 { atmel,pins = < &porta 24 3 >; pinmux-enable; };
+   pa25d_sercom5_pad3: pa25d_sercom5_pad3 { atmel,pins = < &porta 25 3 >; pinmux-enable; };
+   pb22d_sercom5_pad2: pb22d_sercom5_pad2 { atmel,pins = < &portb 22 3 >; pinmux-enable; };
+   pb23d_sercom5_pad3: pb23d_sercom5_pad3 { atmel,pins = < &portb 23 3 >; pinmux-enable; };
+   pb31d_sercom5_pad0: pb31d_sercom5_pad0 { atmel,pins = < &portb 31 3 >; pinmux-enable; };
+   pb30d_sercom5_pad1: pb30d_sercom5_pad1 { atmel,pins = < &portb 30 3 >; pinmux-enable; };
+   pb0d_sercom5_pad2: pb0d_sercom5_pad2 { atmel,pins = < &portb 0 3 >; pinmux-enable; };
+   pb1d_sercom5_pad3: pb1d_sercom5_pad3 { atmel,pins = < &portb 1 3 >; pinmux-enable; };
+   pb2d_sercom5_pad0: pb2d_sercom5_pad0 { atmel,pins = < &portb 2 3 >; pinmux-enable; };
+   pb3d_sercom5_pad1: pb3d_sercom5_pad1 { atmel,pins = < &portb 3 3 >; pinmux-enable; };
+   pc16c_sercom6_pad0: pc16c_sercom6_pad0 { atmel,pins = < &portc 16 2 >; pinmux-enable; };
+   pc17c_sercom6_pad1: pc17c_sercom6_pad1 { atmel,pins = < &portc 17 2 >; pinmux-enable; };
+   pc18c_sercom6_pad2: pc18c_sercom6_pad2 { atmel,pins = < &portc 18 2 >; pinmux-enable; };
+   pc19c_sercom6_pad3: pc19c_sercom6_pad3 { atmel,pins = < &portc 19 2 >; pinmux-enable; };
+   pc4c_sercom6_pad0: pc4c_sercom6_pad0 { atmel,pins = < &portc 4 2 >; pinmux-enable; };
+   pc5c_sercom6_pad1: pc5c_sercom6_pad1 { atmel,pins = < &portc 5 2 >; pinmux-enable; };
+   pc6c_sercom6_pad2: pc6c_sercom6_pad2 { atmel,pins = < &portc 6 2 >; pinmux-enable; };
+   pc7c_sercom6_pad3: pc7c_sercom6_pad3 { atmel,pins = < &portc 7 2 >; pinmux-enable; };
+   pd9d_sercom6_pad0: pd9d_sercom6_pad0 { atmel,pins = < &portd 9 3 >; pinmux-enable; };
+   pd8d_sercom6_pad1: pd8d_sercom6_pad1 { atmel,pins = < &portd 8 3 >; pinmux-enable; };
+   pd10d_sercom6_pad2: pd10d_sercom6_pad2 { atmel,pins = < &portd 10 3 >; pinmux-enable; };
+   pd11d_sercom6_pad3: pd11d_sercom6_pad3 { atmel,pins = < &portd 11 3 >; pinmux-enable; };
+   pc13d_sercom6_pad0: pc13d_sercom6_pad0 { atmel,pins = < &portc 13 3 >; pinmux-enable; };
+   pc12d_sercom6_pad1: pc12d_sercom6_pad1 { atmel,pins = < &portc 12 3 >; pinmux-enable; };
+   pc14d_sercom6_pad2: pc14d_sercom6_pad2 { atmel,pins = < &portc 14 3 >; pinmux-enable; };
+   pc15d_sercom6_pad3: pc15d_sercom6_pad3 { atmel,pins = < &portc 15 3 >; pinmux-enable; };
+   pc10c_sercom6_pad2: pc10c_sercom6_pad2 { atmel,pins = < &portc 10 2 >; pinmux-enable; };
+   pc11c_sercom6_pad3: pc11c_sercom6_pad3 { atmel,pins = < &portc 11 2 >; pinmux-enable; };
+   pc12c_sercom7_pad0: pc12c_sercom7_pad0 { atmel,pins = < &portc 12 2 >; pinmux-enable; };
+   pc13c_sercom7_pad1: pc13c_sercom7_pad1 { atmel,pins = < &portc 13 2 >; pinmux-enable; };
+   pc14c_sercom7_pad2: pc14c_sercom7_pad2 { atmel,pins = < &portc 14 2 >; pinmux-enable; };
+   pc15c_sercom7_pad3: pc15c_sercom7_pad3 { atmel,pins = < &portc 15 2 >; pinmux-enable; };
+   pd8c_sercom7_pad0: pd8c_sercom7_pad0 { atmel,pins = < &portd 8 2 >; pinmux-enable; };
+   pd9c_sercom7_pad1: pd9c_sercom7_pad1 { atmel,pins = < &portd 9 2 >; pinmux-enable; };
+   pd10c_sercom7_pad2: pd10c_sercom7_pad2 { atmel,pins = < &portd 10 2 >; pinmux-enable; };
+   pd11c_sercom7_pad3: pd11c_sercom7_pad3 { atmel,pins = < &portd 11 2 >; pinmux-enable; };
+   pc12d_sercom7_pad0: pc12d_sercom7_pad0 { atmel,pins = < &portc 12 3 >; pinmux-enable; };
+   pc13d_sercom7_pad1: pc13d_sercom7_pad1 { atmel,pins = < &portc 13 3 >; pinmux-enable; };
+   pc10d_sercom7_pad2: pc10d_sercom7_pad2 { atmel,pins = < &portc 10 3 >; pinmux-enable; };
+   pc11d_sercom7_pad3: pc11d_sercom7_pad3 { atmel,pins = < &portc 11 3 >; pinmux-enable; };
+   pb21d_sercom7_pad0: pb21d_sercom7_pad0 { atmel,pins = < &portb 21 3 >; pinmux-enable; };
+   pb20d_sercom7_pad1: pb20d_sercom7_pad1 { atmel,pins = < &portb 20 3 >; pinmux-enable; };
+   pb18d_sercom7_pad2: pb18d_sercom7_pad2 { atmel,pins = < &portb 18 3 >; pinmux-enable; };
+   pb19d_sercom7_pad3: pb19d_sercom7_pad3 { atmel,pins = < &portb 19 3 >; pinmux-enable; };
+   pb30d_sercom7_pad0: pb30d_sercom7_pad0 { atmel,pins = < &portb 30 3 >; pinmux-enable; };
+   pb31d_sercom7_pad1: pb31d_sercom7_pad1 { atmel,pins = < &portb 31 3 >; pinmux-enable; };
+   pa30d_sercom7_pad2: pa30d_sercom7_pad2 { atmel,pins = < &porta 30 3 >; pinmux-enable; };
+   pa31d_sercom7_pad3: pa31d_sercom7_pad3 { atmel,pins = < &porta 31 3 >; pinmux-enable; };
+  };
+ };
+};
+/ {
+ chosen {
+  zephyr,flash-controller = &nvmctrl;
+ };
+ cpus {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  cpu0: cpu@0 {
+   device_type = "cpu";
+   compatible = "arm,cortex-m4f";
+   reg = <0>;
+   #address-cells = <1>;
+   #size-cells = <1>;
+   mpu: mpu@e000ed90 {
+    compatible = "arm,armv7m-mpu";
+    reg = <0xe000ed90 0x40>;
+    arm,num-mpu-regions = <8>;
+   };
+  };
+ };
+ aliases {
+  adc-0 = &adc0;
+  adc-1 = &adc1;
+  port-a = &porta;
+  port-b = &portb;
+  port-c = &portc;
+  port-d = &portd;
+  sercom-0 = &sercom0;
+  sercom-1 = &sercom1;
+  sercom-2 = &sercom2;
+  sercom-3 = &sercom3;
+  sercom-4 = &sercom4;
+  sercom-5 = &sercom5;
+  sercom-6 = &sercom6;
+  sercom-7 = &sercom7;
+  tc-0 = &tc0;
+  tc-2 = &tc2;
+  tc-4 = &tc4;
+  tc-6 = &tc6;
+  tcc-0 = &tcc0;
+  tcc-1 = &tcc1;
+  tcc-2 = &tcc2;
+  tcc-3 = &tcc3;
+  tcc-4 = &tcc4;
+  watchdog0 = &wdog;
+ };
+ chosen {
+  zephyr,entropy = &trng;
+ };
+ soc {
+  sram0: memory@20000000 {
+   compatible = "mmio-sram";
+   reg = <0x20000000 0x40000>;
+  };
+  backup0: memory@47000000 {
+   compatible = "mmio-sram";
+   reg = <0x47000000 0x2000>;
+  };
+  id: device_id@8061fc {
+   compatible = "atmel,sam0-id";
+   reg = <0x008061FC 0x4>,
+    <0x00806010 0x4>,
+    <0x00806014 0x4>,
+    <0x00806018 0x4>;
+  };
+  mclk: mclk@40000800 {
+   compatible = "atmel,samd5x-mclk";
+   reg = <0x40000800 0x400>;
+   #clock-cells = <2>;
+  };
+  gclk: gclk@40001c00 {
+   compatible = "atmel,samd5x-gclk";
+   reg = <0x40001c00 0x400>;
+   #clock-cells = <1>;
+  };
+  nvmctrl: nvmctrl@41004000 {
+   compatible = "atmel,sam0-nvmctrl";
+   label = "FLASH_CTRL";
+   reg = <0x41004000 0x22>;
+   interrupts = <29 0>, <30 0>;
+   lock-regions = <32>;
+   #address-cells = <1>;
+   #size-cells = <1>;
+   flash0: flash@0 {
+    compatible = "soc-nv-flash";
+    label = "FLASH_0";
+    write-block-size = <8>;
+   };
+  };
+  dmac: dmac@4100a000 {
+   compatible = "atmel,sam0-dmac";
+   reg = <0x4100A000 0x50>;
+   interrupts = <31 0>, <32 0>, <33 0>, <34 0>, <35 0>;
+   label = "DMA_0";
+   #dma-cells = <2>;
+  };
+  eic: eic@40002800 {
+   compatible = "atmel,sam0-eic";
+   reg = <0x40002800 0x38>;
+   interrupts = <12 0>, <13 0>, <14 0>, <15 0>,
+         <16 0>, <17 0>, <18 0>, <19 0>,
+         <20 0>, <21 0>, <22 0>, <23 0>,
+         <24 0>, <25 0>, <26 0>, <27 0>;
+   label = "EIC";
+  };
+  pinmux_a: pinmux@41008000 {
+   compatible = "atmel,sam0-pinmux";
+   reg = <0x41008000 0x80>;
+  };
+  pinmux_b: pinmux@41008080 {
+   compatible = "atmel,sam0-pinmux";
+   reg = <0x41008080 0x80>;
+  };
+  pinmux_c: pinmux@41008100 {
+   compatible = "atmel,sam0-pinmux";
+   reg = <0x41008100 0x80>;
+  };
+  pinmux_d: pinmux@41008180 {
+   compatible = "atmel,sam0-pinmux";
+   reg = <0x41008180 0x80>;
+  };
+  wdog: watchdog@40002000 {
+   compatible = "atmel,sam0-watchdog";
+   reg = <0x40002000 13>;
+   interrupts = <10 0>;
+   label = "WATCHDOG_0";
+  };
+  sercom0: sercom@40003000 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x40003000 0x40>;
+   interrupts = <46 0>, <47 0>, <48 0>, <49 0>;
+   status = "disabled";
+   label = "SERCOM0";
+   clocks = <&gclk 7>, <&mclk 0x14 12>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom1: sercom@40003400 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x40003400 0x40>;
+   interrupts = <50 0>, <51 0>, <52 0>, <53 0>;
+   status = "disabled";
+   label = "SERCOM1";
+   clocks = <&gclk 8>, <&mclk 0x14 13>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom2: sercom@41012000 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x41012000 0x40>;
+   interrupts = <54 0>, <55 0>, <56 0>, <57 0>;
+   status = "disabled";
+   label = "SERCOM2";
+   clocks = <&gclk 23>, <&mclk 0x18 9>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom3: sercom@41014000 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x41014000 0x40>;
+   interrupts = <58 0>, <59 0>, <60 0>, <61 0>;
+   status = "disabled";
+   label = "SERCOM3";
+   clocks = <&gclk 24>, <&mclk 0x18 10>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom4: sercom@43000000 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x43000000 0x40>;
+   interrupts = <62 0>, <63 0>, <64 0>, <65 0>;
+   status = "disabled";
+   label = "SERCOM4";
+   clocks = <&gclk 34>, <&mclk 0x20 0>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom5: sercom@43000400 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x43000400 0x40>;
+   interrupts = <66 0>, <67 0>, <68 0>, <69 0>;
+   status = "disabled";
+   label = "SERCOM5";
+   clocks = <&gclk 35>, <&mclk 0x20 1>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom6: sercom@43000800 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x43000800 0x40>;
+   interrupts = <70 0>, <71 0>, <72 0>, <73 0>;
+   status = "disabled";
+   label = "SERCOM6";
+   clocks = <&gclk 36>, <&mclk 0x20 2>;
+   clock-names = "GCLK", "MCLK";
+  };
+  sercom7: sercom@43000c00 {
+   compatible = "atmel,sam0-sercom";
+   reg = <0x43000C00 0x40>;
+   interrupts = <74 0>, <75 0>, <76 0>, <77 0>;
+   status = "disabled";
+   label = "SERCOM7";
+   clocks = <&gclk 37>, <&mclk 0x20 3>;
+   clock-names = "GCLK", "MCLK";
+  };
+  pinctrl@41008000 {
+   compatible = "atmel,sam0-pinctrl";
+   #address-cells = <1>;
+   #size-cells = <1>;
+   ranges = <0x41008000 0x41008000 0x200>;
+   porta: gpio@41008000 {
+    compatible = "atmel,sam0-gpio";
+    reg = <0x41008000 0x80>;
+    label = "PORTA";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+   portb: gpio@41008080 {
+    compatible = "atmel,sam0-gpio";
+    reg = <0x41008080 0x80>;
+    label = "PORTB";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+   portc: gpio@41008100 {
+    compatible = "atmel,sam0-gpio";
+    reg = <0x41008100 0x80>;
+    label = "PORTC";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+   portd: gpio@41008180 {
+    compatible = "atmel,sam0-gpio";
+    reg = <0x41008180 0x80>;
+    label = "PORTD";
+    gpio-controller;
+    #gpio-cells = <2>;
+    #atmel,pin-cells = <2>;
+   };
+  };
+  usb0: usb@41000000 {
+   compatible = "atmel,sam0-usb";
+   status = "disabled";
+   reg = <0x41000000 0x1000>;
+   interrupts = <80 0>, <81 0>, <82 0>, <83 0>;
+   num-bidir-endpoints = <8>;
+   label = "USB0";
+  };
+  trng: random@42002800 {
+   compatible = "atmel,sam-trng";
+   reg = <0x42002800 0x1e>;
+   peripheral-id = <0>;
+   interrupts = <131 0>;
+   label = "ENTROPY_0";
+  };
+  rtc: rtc@40002400 {
+   compatible = "atmel,sam0-rtc";
+   reg = <0x40002400 0x1C>;
+   interrupts = <11 0>;
+   clock-generator = <0>;
+   status = "disabled";
+   label = "RTC";
+  };
+  adc0: adc@43001c00 {
+   compatible = "atmel,sam0-adc";
+   reg = <0x43001C00 0x4A>;
+   interrupts = <118 0>, <119 0>;
+   interrupt-names = "overrun", "resrdy";
+   label = "ADC_0";
+   gclk = <2>;
+   prescaler = <4>;
+   #io-channel-cells = <1>;
+   clocks = <&gclk 40>, <&mclk 0x20 7>;
+   clock-names = "GCLK", "MCLK";
+   calib-offset = <0>;
+  };
+  adc1: adc@43002000 {
+   compatible = "atmel,sam0-adc";
+   reg = <0x43002000 0x4A>;
+   interrupts = <120 0>, <121 0>;
+   interrupt-names = "overrun", "resrdy";
+   label = "ADC_1";
+   gclk = <2>;
+   prescaler = <4>;
+   #io-channel-cells = <1>;
+   clocks = <&gclk 41>, <&mclk 0x20 8>;
+   clock-names = "GCLK", "MCLK";
+   calib-offset = <14>;
+  };
+  tc0: tc@40003800 {
+   compatible = "atmel,sam0-tc32";
+   reg = <0x40003800 0x34>;
+   interrupts = <107 0>;
+   label = "TIMER_0";
+   clocks = <&gclk 9>, <&mclk 0x14 14>;
+   clock-names = "GCLK", "MCLK";
+  };
+  tc2: tc@4101a000 {
+   compatible = "atmel,sam0-tc32";
+   reg = <0x4101A000 0x34>;
+   interrupts = <109 0>;
+   label = "TIMER_2";
+   clocks = <&gclk 26>, <&mclk 0x18 13>;
+   clock-names = "GCLK", "MCLK";
+  };
+  tc4: tc@42001400 {
+   compatible = "atmel,sam0-tc32";
+   reg = <0x42001400 0x34>;
+   interrupts = <111 0>;
+   label = "TIMER_4";
+   clocks = <&gclk 30>, <&mclk 0x1c 5>;
+   clock-names = "GCLK", "MCLK";
+  };
+  tc6: tc@43001400 {
+   compatible = "atmel,sam0-tc32";
+   reg = <0x43001400 0x34>;
+   interrupts = <113 0>;
+   label = "TIMER_6";
+   clocks = <&gclk 39>, <&mclk 0x20 5>;
+   clock-names = "GCLK", "MCLK";
+  };
+  tcc0: tcc@41016000 {
+   compatible = "atmel,sam0-tcc";
+   reg = <0x41016000 0x2000>;
+   interrupts = <85 0>, <86 0>, <87 0>, <88 0>, <89 0>,
+         <90 0>, <91 0>;
+   label = "TCC_0";
+   clocks = <&gclk 25>, <&mclk 0x18 11>;
+   clock-names = "GCLK", "MCLK";
+   channels = <6>;
+   counter-size = <24>;
+  };
+  tcc1: tcc@41018000 {
+   compatible = "atmel,sam0-tcc";
+   reg = <0x41018000 0x2000>;
+   interrupts = <92 0>, <93 0>, <94 0>, <95 0>, <96 0>;
+   label = "TCC_1";
+   clocks = <&gclk 25>, <&mclk 0x18 12>;
+   clock-names = "GCLK", "MCLK";
+   channels = <4>;
+   counter-size = <24>;
+  };
+  tcc2: tcc@42000c00 {
+   compatible = "atmel,sam0-tcc";
+   reg = <0x42000c00 0x400>;
+   interrupts = <97 0>, <98 0>, <99 0>, <100 0>;
+   label = "TCC_2";
+   clocks = <&gclk 29>, <&mclk 0x1c 3>;
+   clock-names = "GCLK", "MCLK";
+   channels = <3>;
+   counter-size = <16>;
+  };
+  tcc3: tcc@42001000 {
+   compatible = "atmel,sam0-tcc";
+   reg = <0x42001000 0x400>;
+   interrupts = <101 0>, <102 0>, <103 0>;
+   label = "TCC_3";
+   clocks = <&gclk 29>, <&mclk 0x1c 4>;
+   clock-names = "GCLK", "MCLK";
+   channels = <2>;
+   counter-size = <16>;
+  };
+  tcc4: tcc@43001000 {
+   compatible = "atmel,sam0-tcc";
+   reg = <0x43001000 0x400>;
+   interrupts = <104 0>, <105 0>, <106 0>;
+   label = "TCC_4";
+   clocks = <&gclk 38>, <&mclk 0x20 4>;
+   clock-names = "GCLK", "MCLK";
+   channels = <2>;
+   counter-size = <16>;
+  };
+ };
+};
+&nvic {
+ arm,num-irq-priority-bits = <3>;
+};
+/ {
+ soc {
+  nvmctrl@41004000 {
+   flash0: flash@0 {
+    reg = <0x0 ((1024) * 1024)>;
+   };
+  };
+  sram0: memory@20000000 {
+   reg = <0x20000000 ((256) * 1024)>;
+  };
+ };
+};
+/ {
+ model = "JMA R2000";
+ compatible = "atmel,samd51n20a", "atmel,samd51";
+ chosen {
+  zephyr,console = &sercom7;
+  zephyr,shell-uart = &sercom7;
+  zephyr,sram = &sram0;
+  zephyr,flash = &flash0;
+  zephyr,code-partition = &slot0_partition;
+ };
+ aliases {
+  tp5 = &tp5;
+  tp6 = &tp6;
+  tp10 = &tp10;
+  tp15 = &tp15;
+  tp18 = &tp18;
+  tp20 = &tp20;
+  tp22 = &tp22;
+  tp23 = &tp23;
+  txrxaisg1 = &txrxaisg1;
+  txrxaisg2 = &txrxaisg2;
+  txrxaisg3 = &txrxaisg3;
+  pwrctrl1 = &pwrctrl1;
+  pwrctrl2 = &pwrctrl2;
+  pwrctrl3 = &pwrctrl3;
+  hardwareid0 = &hardwareid0;
+  hardwareid1 = &hardwareid1;
+  hardwareid2 = &hardwareid2;
+  hardwareid3 = &hardwareid3;
+  assemblyid0 = &assemblyid0;
+  assemblyid1 = &assemblyid1;
+  assemblyid2 = &assemblyid2;
+  assemblyid3 = &assemblyid3;
+  watchdog0 = &wdog;
+ };
+ leds {
+  compatible = "gpio-leds";
+  tp5: tp_5 {
+   gpios = <&portc 0 0>;
+   label = "TEST_POINT5";
+  };
+  tp6: tp_6 {
+   gpios = <&portc 1 0>;
+   label = "TEST_POINT6";
+  };
+  tp10: tp_10 {
+   gpios = <&portc 2 0>;
+   label = "TEST_POINT10";
+  };
+  tp15: tp_15 {
+   gpios = <&portc 3 0>;
+   label = "TEST_POINT15";
+  };
+  tp18: tp_18 {
+   gpios = <&portc 5 0>;
+   label = "TEST_POINT18";
+  };
+  tp20: tp_20 {
+   gpios = <&portc 6 0>;
+   label = "TEST_POINT20";
+  };
+  tp22: tp_22 {
+   gpios = <&portc 14 0>;
+   label = "TEST_POINT22";
+  };
+  tp23: tp_23 {
+   gpios = <&portc 15 0>;
+   label = "TEST_POINT23";
+  };
+  txrxaisg1: txrx_aisg1 {
+   gpios = <&portb 18 0>;
+   label = "TXRX_AISG1";
+  };
+  txrxaisg2: txrx_aisg2 {
+   gpios = <&portc 18 0>;
+   label = "TXRX_AISG2";
+  };
+  txrxaisg3: txrx_aisg3 {
+   gpios = <&porta 18 0>;
+   label = "TXRX_AISG2";
+  };
+  pwrctrl1: pwr_ctrl1 {
+   gpios = <&portc 27 0>;
+   label = "PWR_CTRL1";
+  };
+  pwrctrl2: pwr_ctrl2 {
+   gpios = <&portc 28 0>;
+   label = "PWR_CTRL2";
+  };
+  pwrctrl3: pwr_ctrl3 {
+   gpios = <&porta 27 0>;
+   label = "PWR_CTRL3";
+  };
+ };
+ gpio_keys {
+  compatible = "gpio-keys";
+  hardwareid0: hdr_id0 {
+   gpios = <&portb 0 (1 << 4)>;
+   label = "HARDWARE_ID0";
+  };
+  hardwareid1: hdr_id1 {
+   gpios = <&portb 1 (1 << 4)>;
+   label = "HARDWARE_ID1";
+  };
+  hardwareid2: hdr_id2 {
+   gpios = <&portb 2 (1 << 4)>;
+   label = "HARDWARE_ID2";
+  };
+  hardwareid3: hdr_id3 {
+   gpios = <&portb 3 (1 << 4)>;
+   label = "HARDWARE_ID3";
+  };
+  assemblyid0: ass_id0 {
+   gpios = <&porta 0 (1 << 5)>;
+   label = "ASSEMBLY_ID0";
+  };
+  assemblyid1: ass_id1 {
+   gpios = <&porta 1 (1 << 5)>;
+   label = "ASSEMBLY_ID1";
+  };
+  assemblyid2: ass_id2 {
+   gpios = <&porta 2 (1 << 5)>;
+   label = "ASSEMBLY_ID2";
+  };
+  assemblyid3: ass_id3 {
+   gpios = <&porta 3 (1 << 5)>;
+   label = "ASSEMBLY_ID3";
+  };
+ };
+};
+&cpu0 {
+ clock-frequency = <20000000>;
+};
+&wdog {
+ status = "okay";
+};
+&sercom1 {
+ status = "okay";
+ compatible = "atmel,sam0-uart";
+ current-speed = <9600>;
+ rxpo = <1>;
+ txpo = <0>;
+ #address-cells = <1>;
+ #size-cells = <0>;
+ pinctrl-0 = <&pa16c_sercom1_pad0 &pa17c_sercom1_pad1>;
+};
+&sercom3 {
+ status = "disabled";
+};
+&sercom4 {
+ status = "okay";
+ compatible = "atmel,sam0-spi";
+ dipo = <3>;
+ dopo = <0>;
+ label = "SPI";
+ #address-cells = <1>;
+ #size-cells = <0>;
+ cs-gpios = <&portb 14 (1 << 0)>;
+ mx25v80:mx25v8035f@0 {
+  compatible = "jedec,spi-nor";
+  reg = <0>;
+  spi-max-frequency = <108000000>;
+  label = "MX25V80";
+  jedec-id = [c2 23 14];
+  size = <8388608>;
+  wp-gpios = <&portb 10 0>;
+  hold-gpios = <&portb 11 0>;
+ };
+};
+&sercom5 {
+ status = "okay";
+ compatible = "atmel,sam0-uart";
+ current-speed = <9600>;
+ rxpo = <1>;
+ txpo = <0>;
+ #address-cells = <1>;
+ #size-cells = <0>;
+ pinctrl-0 = <&pb16c_sercom5_pad0 &pb17c_sercom5_pad1>;
+};
+&sercom6 {
+ status = "okay";
+ compatible = "atmel,sam0-uart";
+ current-speed = <9600>;
+ rxpo = <1>;
+ txpo = <0>;
+ #address-cells = <1>;
+ #size-cells = <0>;
+ pinctrl-0 = <&pc16c_sercom6_pad0 &pc17c_sercom6_pad1>;
+};
+&sercom7 {
+ status = "okay";
+ compatible = "atmel,sam0-uart";
+ current-speed = <115200>;
+ rxpo = <1>;
+ txpo = <0>;
+ #address-cells = <1>;
+ #size-cells = <0>;
+ pinctrl-0 = <&pc12c_sercom7_pad0 &pc13c_sercom7_pad1>;
+};
+&mx25v80 {
+ partitions {
+  compatible = "fixed-partitions";
+  #address-cells = <1>;
+  #size-cells = <1>;
+  upgrade: partition@0 {
+   label = "uprade";
+   reg = <0x00000000 0x00080000>;
+  };
+  oldData: partition@80000 {
+   label = "oldData";
+   reg = <0x00080000 0x00050000>;
+  };
+  storage_partition: partition@D0000 {
+   label = "storage";
+   reg = <0x000D0000 0x00030000>;
+  };
+ };
+};
+&flash0 {
+ partitions {
+  compatible = "fixed-partitions";
+  #address-cells = <1>;
+  #size-cells = <1>;
+  boot_partition: partition@0 {
+   label = "boot";
+   reg = <0x00000000 0x00002000>;
+  };
+  slot0_partition: partition@2000 {
+   label = "image-0";
+   reg = <0x00002000 0x000C0000>;
+  };
+  extra_partition: partition@C2000 {
+   label = "extra";
+   reg = <0x000C2000 0x0003E000>;
+  };
+ };
+};
+/ {
+ aliases {
+  pgvm = &pgvm;
+  swndiag0 = &swndiag0;
+  swpdiag1 = &swpdiag1;
+  motordir1 = &motordir1;
+  motordir2 = &motordir2;
+  motordir3 = &motordir3;
+  motordir4 = &motordir4;
+  motorspeed1 = &motorspeed1;
+  motorspeed2 = &motorspeed2;
+  motorspeed3 = &motorspeed3;
+  motorspeed4 = &motorspeed4;
+  drvenb1 = &drvenb1;
+  drvenb2 = &drvenb2;
+  drvenb3 = &drvenb3;
+  drvenb4 = &drvenb4;
+  chipselect1 = &chipselect1;
+  chipselect2 = &chipselect2;
+  chipselect3 = &chipselect3;
+  chipselect4 = &chipselect4;
+  freqpin = &freqpin;
+ };
+ leds {
+  compatible = "gpio-leds";
+  drvenb1: drv_enable1 {
+   gpios = <&porta 21 0>;
+   label = "DRV_ENABLE1";
+  };
+  drvenb2: drv_enable2 {
+   gpios = <&porta 20 0>;
+   label = "DRV_ENABLE2";
+  };
+  drvenb3: drv_enable3 {
+   gpios = <&portb 21 0>;
+   label = "DRV_ENABLE3";
+  };
+  drvenb4: drv_enable4 {
+   gpios = <&portb 20 0>;
+   label = "DRV_ENABLE4";
+  };
+  chipselect1: chip_select1 {
+   gpios = <&porta 25 0>;
+   label = "Chip_Select1";
+  };
+  chipselect2: chip_select2 {
+   gpios = <&porta 24 0>;
+   label = "Chip_Select2";
+  };
+  chipselect3: chip_select3 {
+   gpios = <&porta 23 0>;
+   label = "Chip_Select3";
+  };
+  chipselect4: chip_select4 {
+   gpios = <&porta 22 0>;
+   label = "Chip_Select4";
+  };
+  freqpin: freq_pin {
+   gpios = <&portb 19 0>;
+   label = "Freq_Pin";
+  };
+ };
+ gpio_keys {
+  compatible = "gpio-keys";
+  pgvm: pg_vm {
+   gpios = <&portb 31 (1 << 4)>;
+   label = "PG_VM";
+  };
+  swndiag0: swn_diag0 {
+   gpios = <&portb 4 (1 << 4)>;
+   label = "SWN_DIAG0";
+  };
+  swpdiag1: swp_diag1 {
+   gpios = <&portb 5 (1 << 4)>;
+   label = "SWP_DIAG1";
+  };
+  motordir1: motor_dir1 {
+   gpios = <&portb 6 (1 << 4)>;
+   label = "MOTOR_DIR1";
+  };
+  motordir2: motor_dir2 {
+   gpios = <&portb 7 (1 << 4)>;
+   label = "MOTOR_DIR2";
+  };
+  motordir3: motor_dir3 {
+   gpios = <&portb 8 (1 << 4)>;
+   label = "MOTOR_DIR3";
+  };
+  motordir4: motor_dir4 {
+   gpios = <&portb 9 (1 << 4)>;
+   label = "MOTOR_DIR4";
+  };
+  motorspeed1: motor_speed1 {
+   gpios = <&porta 4 0>;
+   label = "MOTOR_SPEED1";
+  };
+  motorspeed2: motor_speed2 {
+   gpios = <&porta 5 (1 << 4)>;
+   label = "MOTOR_SPEED2";
+  };
+  motorspeed3: motor_speed3 {
+   gpios = <&porta 6 (1 << 4)>;
+   label = "MOTOR_SPEED3";
+  };
+  motorspeed4: motor_speed4 {
+   gpios = <&porta 7 (1 << 4)>;
+   label = "MOTOR_SPEED4";
+  };
+ };
+};
+&sercom0 {
+ status = "okay";
+ compatible = "atmel,sam0-spi";
+ dipo = <3>;
+ dopo = <0>;
+ label = "TMC5130";
+ #address-cells = <1>;
+ #size-cells = <0>;
+};
+&sercom2 {
+ status = "okay";
+ compatible = "atmel,sam0-i2c";
+ clock-frequency = <100000>;
+ label = "EEPROM";
+ #address-cells = <1>;
+ #size-cells = <0>;
+};

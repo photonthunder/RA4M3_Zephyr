@@ -1,0 +1,14 @@
+# EK-RA4W1 Board configuration
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_EK_RA4W1
+
+config BOARD
+	default "ek-ra4w1"
+
+config GPIO
+	default y
+
+endif # BOARD_EK_RA4W1

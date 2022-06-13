@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
+
+rsource "gpio/Kconfig.ra"
+rsource "serial/Kconfig.ra"

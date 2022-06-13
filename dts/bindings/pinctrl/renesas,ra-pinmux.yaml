@@ -1,0 +1,13 @@
+description: Renesas RA PINMUX
+
+compatible: "renesas,ra-pinmux"
+
+include: base.yaml
+
+properties:
+    reg:
+      required: true
+
+pinmux-cells:
+  - pin
+  - function

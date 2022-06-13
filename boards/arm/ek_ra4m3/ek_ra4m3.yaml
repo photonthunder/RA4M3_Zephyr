@@ -1,0 +1,19 @@
+identifier: ek_ra4m3
+name: EK_RA4M3
+type: mcu
+arch: arm
+ram: 128
+flash: 1024
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - gpio
+  - hwinfo
+  - pinmux
+  - pwm
+  - spi
+  - uart
+  - usb_device
+  - watchdog

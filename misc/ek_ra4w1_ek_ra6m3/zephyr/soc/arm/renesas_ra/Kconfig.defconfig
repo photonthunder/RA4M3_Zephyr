@@ -1,0 +1,43 @@
+# Renesas RA MCU family default configuration options
+
+# Copyright (c) 2020 MXT Creation
+# SPDX-License-Identifier: Apache-2.0
+
+source "soc/arm/renesas_ra/ra/*/Kconfig.defconfig.series"
+
+config WATCHDOG
+	default y
+	depends on SOC_FAMILY_RA
+
+config RENESAS_DRIVER_AGT
+	bool "Enable Renesas AGT driver"
+	
+config RENESAS_DRIVER_FLASH_LP
+	bool "Enable Renesas FLASH LP driver"
+
+config RENESAS_DRIVER_GPT
+	bool "Enable Renesas GPT driver"
+
+config RENESAS_DRIVER_ICU
+	bool "Enable Renesas ICU driver"
+
+config RENESAS_DRIVER_IOPORT
+	bool "Enable Renesas IOPORT driver"
+	
+config RENESAS_BSP_DELAY
+	bool "Enable Renesas BSP delay support"
+
+config RENESAS_BSP_IRQ
+	bool "Enable Renesas BSP irq support"
+
+config RENESAS_BSP_REG_PROT
+	bool "Enable Renesas BSP register protection support"
+
+config RENESAS_BSP_CLOCKS
+	bool "Enable Renesas BSP clocks support"
+
+config RENESAS_BSP_COMMON
+	bool "Enable Renesas BSP common support"
+	
+config RENESAS_BSP_API
+	bool "Enable Renesas BSP api support"

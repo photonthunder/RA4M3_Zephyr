@@ -1,0 +1,12 @@
+# Evaluation Kit EK-RA4M3 uses: R7FA4M3AF3CFB
+# 144 pins
+
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_PART_NUMBER_RA4M3AF3CFB
+
+config SOC_PART_NUMBER
+    string
+	default "ra4m3af3cfb"
+
+endif
